@@ -62,9 +62,9 @@ module Make = (Config: ReasonApolloTypes.Config) => {
       (
         ~subscription: ReasonApolloTypes.queryString,
         ~variables: option(Js.Json.t),
-        ~children: renderPropObjJS => ReasonReact.reactElement
+        ~children: renderPropObjJS => React.reactElement
       ) =>
-      ReasonReact.reactElement =
+      React.reactElement =
       "Subscription";
   };
 

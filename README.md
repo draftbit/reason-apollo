@@ -25,7 +25,7 @@ Add `reason-apollo` to your `bs-dependencies` and
 
 ```
 "bs-dependencies": [
-  "reason-react",
+  "@rescript/react",
   "reason-apollo"
 ],
 "ppx-flags": [
@@ -113,8 +113,8 @@ let make = () => {
   <GetUserNameQuery variables=userNameQuery##variables>
     ...{({result}) =>
       switch (result) {
-      | Loading => <div> {ReasonReact.string("Loading")} </div>
-      | Error(error) => <div> {ReasonReact.string(error##message)} </div>
+      | Loading => <div> {React.string("Loading")} </div>
+      | Error(error) => <div> {React.string(error##message)} </div>
       | Data(response) =>
         <div>
           {/* Handles a deeply nested optional response */
@@ -163,7 +163,7 @@ let make = () => {
             )
             |> ignore
           }>
-          {ReasonReact.string("Add User")}
+          {React.string("Add User")}
         </button>
       </div>;
     }}
@@ -192,8 +192,8 @@ let make = () => {
   <UserAddedSubscription>
     ...{({result}) => {
       switch (result) {
-      | Loading => <div> {ReasonReact.string("Loading")} </div>
-      | Error(error) => <div> {ReasonReact.string(error##message)} </div>
+      | Loading => <div> {React.string("Loading")} </div>
+      | Error(error) => <div> {React.string(error##message)} </div>
       | Data(_response) =>
         <audio autoPlay=true>
           <source src="notification.ogg" type_="audio/ogg" />
@@ -370,7 +370,7 @@ module QueryView = {
       ) => {
     switch (result) {
     | Error(error) => <Error />
-    | Loading => ReasonReact.null
+    | Loading => React.null
     | Data(response) =>
       switch (accessData(response)) {
       | Some(data) => render(data, onLoadMore(data))
