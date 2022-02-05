@@ -5,10 +5,6 @@
       "dir": "src",
       "public": "all",
       "subdirs": ["graphql-types"]
-    },
-    {
-      "dir": "examples",
-      "type": "dev"
     }
   ],
   "bs-dependencies": ["@rescript/react"],
