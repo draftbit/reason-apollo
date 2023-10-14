@@ -5,13 +5,9 @@
       "dir": "src",
       "public": "all",
       "subdirs": ["graphql-types"]
-    },
-    {
-      "dir": "examples",
-      "type": "dev"
     }
   ],
-  "bs-dependencies": ["reason-react"],
+  "bs-dependencies": ["@rescript/react"],
   "bsc-flags": ["-bs-super-errors"],
   "reason": {
     "react-jsx": 3
